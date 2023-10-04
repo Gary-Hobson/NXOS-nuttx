@@ -108,9 +108,9 @@
  */
 
 #ifdef NDEBUG
-#  define assert(f) ((void)(1 || (f)))
+#  define assert(f) ((void)(1))
 #else
-#  define assert(f) ASSERT(f)
+#  define assert(f) ({ASSERT(f);})
 #endif
 
 /* Suppress 3rd party library redefine _assert/__assert */
