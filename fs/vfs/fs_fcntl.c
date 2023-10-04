@@ -216,7 +216,8 @@ static int file_vfcntl(FAR struct file *filep, int cmd, va_list ap)
          * the lock operation shall not be done.
          */
 
-        ret = -ENOSYS; /* Not implemented */
+        #warning "F_GETTLK/F_SETLK/F_SETLKW is not implemented, we just don’t report an error"
+        ret = 0; /* Not implemented */
         break;
 
       case F_GETPATH:
